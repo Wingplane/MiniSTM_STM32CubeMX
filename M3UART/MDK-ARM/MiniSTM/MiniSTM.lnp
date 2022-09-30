@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"ministm\startup_stm32f103xe.o"
+"ministm\key.o"
+"ministm\uart.o"
+"ministm\main.o"
+"ministm\gpio.o"
+"ministm\usart.o"
+"ministm\stm32f1xx_it.o"
+"ministm\stm32f1xx_hal_msp.o"
+"ministm\stm32f1xx_hal_gpio_ex.o"
+"ministm\stm32f1xx_hal_tim.o"
+"ministm\stm32f1xx_hal_tim_ex.o"
+"ministm\stm32f1xx_hal_uart.o"
+"ministm\stm32f1xx_hal.o"
+"ministm\stm32f1xx_hal_rcc.o"
+"ministm\stm32f1xx_hal_rcc_ex.o"
+"ministm\stm32f1xx_hal_gpio.o"
+"ministm\stm32f1xx_hal_dma.o"
+"ministm\stm32f1xx_hal_cortex.o"
+"ministm\stm32f1xx_hal_pwr.o"
+"ministm\stm32f1xx_hal_flash.o"
+"ministm\stm32f1xx_hal_flash_ex.o"
+"ministm\stm32f1xx_hal_exti.o"
+"ministm\system_stm32f1xx.o"
+--strict --scatter "MiniSTM\MiniSTM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MiniSTM.map" -o MiniSTM\MiniSTM.axf
