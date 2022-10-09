@@ -557,12 +557,12 @@ ARM Macro Assembler    Page 9
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=ministm\startup_stm32f103xe.d -oministm\startup_stm32f103xe.o -I.\
-RTE\_MiniSTM -ID:\Users\zy612\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Cor
-e\Include -ID:\Users\zy612\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Dev
-ice\Include --predefine="__UVISION_VERSION SETA 529" --predefine="_RTE_ SETA 1"
- --predefine="STM32F10X_HD SETA 1" --list=startup_stm32f103xe.lst startup_stm32
-f103xe.s
+ork --depend=ministm\startup_stm32f103xe.d -oministm\startup_stm32f103xe.o -ID:
+\GitHub\MiniSTM_STM32CubeMX\M2BUTTON\MDK-ARM\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSI
+S\5.7.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Devic
+e\Include --predefine="__UVISION_VERSION SETA 521" --predefine="_RTE_ SETA 1" -
+-predefine="STM32F10X_HD SETA 1" --list=startup_stm32f103xe.lst startup_stm32f1
+03xe.s
 
 
 
