@@ -1,0 +1,46 @@
+#include "timer.h"
+#include "tim.h"
+#include "led.h"
+
+uint8_t  TIM5CH1_CAPTURE_STA=0;			
+uint16_t	TIM5CH1_CAPTURE_VAL;
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if((TIM5CH1_CAPTURE_STA&0X80)==0)
+	{
+		if(TIM5CH1_CAPTURE_STA&0X40)
+		{
+			if((TIM5CH1_CAPTURE_STA&0X3F)==0X3F)
+			{
+				TIM5CH1_CAPTURE_STA|=0X80;
+				TIM5CH1_CAPTURE_VAL=0XFFFF;
+			}else TIM5CH1_CAPTURE_STA++;
+		}	 
+	}		
+}
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+	if((TIM5CH1_CAPTURE_STA&0X80)==0)
+	{
+		if(TIM5CH1_CAPTURE_STA&0X40)
+		{	  			
+			TIM5CH1_CAPTURE_STA|=0X80;
+      TIM5CH1_CAPTURE_VAL=HAL_TIM_ReadCapturedValue(&htim5,TIM_CHANNEL_1);
+			TIM_RESET_CAPTUREPOLARITY(&htim5,TIM_CHANNEL_1);
+      TIM_SET_CAPTUREPOLARITY(&htim5,TIM_CHANNEL_1,TIM_ICPOLARITY_RISING);
+		}
+		else
+		{
+			TIM5CH1_CAPTURE_STA=0;
+			TIM5CH1_CAPTURE_VAL=0;
+			TIM5CH1_CAPTURE_STA|=0X40;
+			__HAL_TIM_DISABLE(&htim5);
+			__HAL_TIM_SET_COUNTER(&htim5,0);
+			TIM_RESET_CAPTUREPOLARITY(&htim5,TIM_CHANNEL_1);
+			TIM_SET_CAPTUREPOLARITY(&htim5,TIM_CHANNEL_1,TIM_ICPOLARITY_FALLING);
+			__HAL_TIM_ENABLE(&htim5);
+		}		    
+	}		
+}
