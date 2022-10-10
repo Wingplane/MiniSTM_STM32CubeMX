@@ -2,5 +2,5 @@
 
 void IWDG_Feed(void)
 {
-	HAL_IWDG_Refresh(&hiwdg); //喂狗
+	HAL_IWDG_Refresh(&hiwdg);
 }

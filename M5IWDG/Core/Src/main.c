@@ -89,7 +89,8 @@ int main(void)
   MX_GPIO_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
-	LED0 = 1;
+	HAL_Delay(100);
+	LED0 = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -98,7 +99,7 @@ int main(void)
   {
 		if(KEY_Scan(0)==WKUP_PRES)
 		{
-			IWDG_Feed();
+			IWDG_Feed(); 	//Î¹¹·
 		}
 		HAL_Delay(10);
     /* USER CODE END WHILE */

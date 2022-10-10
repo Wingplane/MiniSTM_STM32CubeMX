@@ -1,12 +1,12 @@
 --cpu Cortex-M3
 "ministm\startup_stm32f103xe.o"
 "ministm\key.o"
+"ministm\wdg.o"
 "ministm\main.o"
 "ministm\gpio.o"
 "ministm\iwdg.o"
 "ministm\stm32f1xx_it.o"
 "ministm\stm32f1xx_hal_msp.o"
-"ministm\wdg.o"
 "ministm\system_stm32f1xx.o"
 "ministm\stm32f1xx_hal_gpio_ex.o"
 "ministm\stm32f1xx_hal_iwdg.o"
