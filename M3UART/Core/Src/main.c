@@ -87,6 +87,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	HAL_NVIC_EnableIRQ(USART1_IRQn);				//使能USART1中断通道
+	HAL_NVIC_SetPriority(USART1_IRQn,9,0);
 	HAL_UART_Receive_IT(&huart1, (uint8_t *)aRxBuffer, RXBUFFERSIZE);
 	uint8_t len;
 	uint16_t times = 0;
