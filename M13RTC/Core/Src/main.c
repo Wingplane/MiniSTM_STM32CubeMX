@@ -114,7 +114,7 @@ int main(void)
 	LCD_ShowString(30,90,200,16,16,"ATOM@ALIENTEK");
 	LCD_ShowString(30,110,200,16,16,"2019/11/15");	
 	POINT_COLOR=BLUE;//设置字体为蓝色					 
-	LCD_ShowString(30,130,200,16,16,"    -  -     ");	   
+	LCD_ShowString(30,130,200,16,16,"20  -  -     ");	   
 	LCD_ShowString(30,166,200,16,16,"  :  :  ");
   /* USER CODE END 2 */
 
@@ -125,7 +125,7 @@ int main(void)
 		if(t!=GetTime.Seconds)
 		{
 			t = GetTime.Seconds;
-			LCD_ShowNum(30,130,GetDate.Year,4,16);									  
+			LCD_ShowNum(46,130,GetDate.Year,2,16);									  
 			LCD_ShowNum(70,130,GetDate.Month,2,16);									  
 			LCD_ShowNum(94,130,GetDate.Date,2,16);	 
 			switch(GetDate.WeekDay)
