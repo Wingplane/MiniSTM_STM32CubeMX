@@ -22,7 +22,7 @@ M12-->M20[SPI];
 M12-->M22[REMOTE];
 M12-->M26[EEPRROM]-->M27[MALLOC]-->M28[SD];
 M20-->M28;
-click M01 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M01LED"
+click M01 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M01LED" "LED"
 click M02 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M02BUTTON"
 click M03 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M03UART"
 click M04 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M04EXTI"
