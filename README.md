@@ -21,7 +21,7 @@ M12-->M19[IIC]-->M21[ITOUCH];
 M12-->M20[SPI];
 M12-->M22[REMOTE];
 M12-->M26[EEPRROM]-->M27[MALLOC]-->M28[SD];
-M20-->M28;
+M20-->M28-->M29[FATFS];
 click M01 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M01LED" "LED"
 click M02 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M02BUTTON"
 click M03 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M03UART"
@@ -46,6 +46,7 @@ click M22 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M22REMOTE"
 click M26 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M26EEPRROM"
 click M27 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M27MALLOC"
 click M28 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M28SD"
+click M29 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M29FATFS"
 ```
 
 ## 例程文件结构
