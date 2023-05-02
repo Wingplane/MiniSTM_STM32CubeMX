@@ -4,8 +4,6 @@
 
 ## 例程目录
 
-点击即可跳转
-
 ```mermaid
 graph TD;
 M01[LED]-->M02[BUTTON]-->M03[UART];
