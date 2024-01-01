@@ -21,32 +21,6 @@ M12-->M22[REMOTE];
 M12-->M26[EEPRROM]-->M27[MALLOC]-->M28[SD];
 M20-->M28-->M29[FATFS];
 M01-->M35[FREERTOS];
-click M01 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M01LED" "LED"
-click M02 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M02BUTTON"
-click M03 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M03UART"
-click M04 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M04EXTI"
-click M05 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M05IWDG"
-click M06 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M06WWDG"
-click M07 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M07TIMER"
-click M08 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M08PWM"
-click M09 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M09ICAPTURE"
-click M11 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M11LCD"
-click M12 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M12USMART"
-click M13 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M13RTC"
-click M14 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M14WKUP"
-click M15 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M15ADC"
-click M16 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M16ITEMP"
-click M17 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M17DAC"
-click M18 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M18DMA"
-click M19 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M19IIC"
-click M20 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M20SPI"
-click M21 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M21TOUCH"
-click M22 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M22REMOTE"
-click M26 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M26EEPRROM"
-click M27 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M27MALLOC"
-click M28 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M28SD"
-click M29 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M29FATFS"
-click M35 "https://github.com/Wingplane/MiniSTM_STM32CubeMX/tree/main/M35FREERTOS"
 ```
 
 ## 例程文件结构
