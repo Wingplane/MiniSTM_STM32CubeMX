@@ -88,15 +88,15 @@ int main(void)
   MX_GPIO_Init();
   MX_WWDG_Init();
   /* USER CODE BEGIN 2 */
-	LED0 = 0;
-	HAL_Delay(300);
+  LED0 = 0;
+  HAL_Delay(300);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		LED0=1;
+    LED0 = 1;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

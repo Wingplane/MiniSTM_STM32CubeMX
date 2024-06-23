@@ -90,19 +90,23 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1); // Start the PWM timer
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		HAL_Delay(10);
-		if(dir)led0pwmval++;
-		else led0pwmval--;	 
- 		if(led0pwmval>300)dir=0;
-		if(led0pwmval==0)dir=1;	   					 
-		__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, led0pwmval);
+    HAL_Delay(10); // Delay 10ms
+    if (dir)       // If direction is 1, increment the PWM value
+      led0pwmval++;
+    else // If direction is 0, decrement the PWM value
+      led0pwmval--;
+    if (led0pwmval > 300) // If PWM value is greater than 300, set direction to 0
+      dir = 0;
+    if (led0pwmval == 0) // If PWM value is 0, set direction to 1
+      dir = 1;
+    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, led0pwmval); // Set the PWM value
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

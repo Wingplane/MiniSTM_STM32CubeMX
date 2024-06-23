@@ -1,3 +1,10 @@
+/**
+ * @file : key.h
+ * @brief : key driver
+ * @author : zhang yue email:zhangyue@petalmail.com
+ * @version : 1.0
+ * @date : 2024-06-23
+ */
 #ifndef __KEY_H
 #define __KEY_H
 #include "stm32f1xx_hal.h"
