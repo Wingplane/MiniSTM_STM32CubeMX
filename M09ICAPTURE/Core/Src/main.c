@@ -59,8 +59,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-extern uint8_t  TIM5CH1_CAPTURE_STA;		//输入捕获状态		    				
-extern uint32_t	TIM5CH1_CAPTURE_VAL;	//输入捕获值 
+extern uint8_t TIM5CH1_CAPTURE_STA;  // input capture status
+extern uint32_t TIM5CH1_CAPTURE_VAL; // input capture value
 /* USER CODE END 0 */
 
 /**
@@ -95,28 +95,27 @@ int main(void)
   MX_TIM5_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
-	HAL_TIM_IC_Start_IT(&htim5,TIM_CHANNEL_1);   //开启TIM5的捕获通道1，并且开启捕获中断
-    __HAL_TIM_ENABLE_IT(&htim5,TIM_IT_UPDATE);   //使能更新中断
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);   // start PWM TIM1CH1
+  HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_1); // start input capture TIM5CH1 and enable interrupt
+  __HAL_TIM_ENABLE_IT(&htim5, TIM_IT_UPDATE); // enable update interrupt
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		HAL_Delay(10);
-		__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, HAL_TIM_ReadCapturedValue(&htim1,TIM_CHANNEL_1)+1);
-		if(HAL_TIM_ReadCapturedValue(&htim1,TIM_CHANNEL_1)==300)
-			__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, 0);
-    if(TIM5CH1_CAPTURE_STA&0X80) 
-		{
-			temp=TIM5CH1_CAPTURE_STA&0X3F; 
-			temp*=65536;
-			temp+=TIM5CH1_CAPTURE_VAL;
-			printf("HIGH:%lld us\r\n",temp);
-			TIM5CH1_CAPTURE_STA=0;
-		}  					 
-		
+    HAL_Delay(10);
+    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_1) + 1); // increase duty cycle
+    if (HAL_TIM_ReadCapturedValue(&htim1, TIM_CHANNEL_1) == 300)                                       // if duty cycle is 300, reset duty cycle
+      __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, 0);
+    if (TIM5CH1_CAPTURE_STA & 0X80) // if capture flag is set
+    {
+      temp = TIM5CH1_CAPTURE_STA & 0X3F; // get capture status
+      temp *= 65536;                     // shift 16 bits
+      temp += TIM5CH1_CAPTURE_VAL;       // get capture value
+      printf("HIGH:%lld us\r\n", temp);  // print high level time
+      TIM5CH1_CAPTURE_STA = 0;           // clear capture flag
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

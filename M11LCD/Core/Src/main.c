@@ -66,11 +66,11 @@ void SystemClock_Config(void);
 int main(void)
 {
 	/* USER CODE BEGIN 1 */
-	uint8_t x=0;
-	uint8_t lcd_id[12];
-	/* USER CODE END 1 */
+  uint8_t x = 0;      // Color index
+  uint8_t lcd_id[12]; // LCD ID
+                      /* USER CODE END 1 */
 
-	/* MCU Configuration--------------------------------------------------------*/
+  /* MCU Configuration--------------------------------------------------------*/
 
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 	HAL_Init();
@@ -90,70 +90,70 @@ int main(void)
 	MX_GPIO_Init();
 	MX_USART1_UART_Init();
 	/* USER CODE BEGIN 2 */
-	LCD_Init();
-	POINT_COLOR = RED;
-	sprintf((char *)lcd_id, "LCD ID:%04X", lcddev.id);
-	/* USER CODE END 2 */
+  LCD_Init();                                        // Initialize LCD
+  POINT_COLOR = RED;                                 // Set font color
+  sprintf((char *)lcd_id, "LCD ID:%04X", lcddev.id); // Get LCD ID
+  /* USER CODE END 2 */
 
-	/* Infinite loop */
-	/* USER CODE BEGIN WHILE */
-	while (1)
-	{
-		switch (x)
-		{
-		case 0:
-			LCD_Clear(WHITE);
-			break;
-		case 1:
-			LCD_Clear(BLACK);
-			break;
-		case 2:
-			LCD_Clear(BLUE);
-			break;
-		case 3:
-			LCD_Clear(RED);
-			break;
-		case 4:
-			LCD_Clear(MAGENTA);
-			break;
-		case 5:
-			LCD_Clear(GREEN);
-			break;
-		case 6:
-			LCD_Clear(CYAN);
-			break;
-		case 7:
-			LCD_Clear(YELLOW);
-			break;
-		case 8:
-			LCD_Clear(BRRED);
-			break;
-		case 9:
-			LCD_Clear(GRAY);
-			break;
-		case 10:
-			LCD_Clear(LGRAY);
-			break;
-		case 11:
-			LCD_Clear(BROWN);
-			break;
-		}
-		POINT_COLOR = RED;
-		LCD_ShowString(30, 40, 200, 24, 24, "Mini STM32 ^_^");
-		LCD_ShowString(30, 70, 200, 16, 16, "TFTLCD TEST");
-		LCD_ShowString(30, 90, 200, 16, 16, "ATOM@ALIENTEK");
-		LCD_ShowString(30, 110, 200, 16, 16, lcd_id); //显示LCD ID
-		LCD_ShowString(30, 130, 200, 12, 12, "2019/11/15");
-		x++;
-		if (x == 12)
-			x = 0;
-		LED0 = !LED0;
-		HAL_Delay(1000);
-		/* USER CODE END WHILE */
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    switch (x) // Change background color
+    {
+    case 0:
+      LCD_Clear(WHITE);
+      break;
+    case 1:
+      LCD_Clear(BLACK);
+      break;
+    case 2:
+      LCD_Clear(BLUE);
+      break;
+    case 3:
+      LCD_Clear(RED);
+      break;
+    case 4:
+      LCD_Clear(MAGENTA);
+      break;
+    case 5:
+      LCD_Clear(GREEN);
+      break;
+    case 6:
+      LCD_Clear(CYAN);
+      break;
+    case 7:
+      LCD_Clear(YELLOW);
+      break;
+    case 8:
+      LCD_Clear(BRRED);
+      break;
+    case 9:
+      LCD_Clear(GRAY);
+      break;
+    case 10:
+      LCD_Clear(LGRAY);
+      break;
+    case 11:
+      LCD_Clear(BROWN);
+      break;
+    }
+    POINT_COLOR = RED;                                     // Set font color
+    LCD_ShowString(30, 40, 200, 24, 24, "Mini STM32 ^_^"); // Show title
+    LCD_ShowString(30, 70, 200, 16, 16, "TFTLCD TEST");    // Show test
+    LCD_ShowString(30, 90, 200, 16, 16, "ATOM@ALIENTEK");  // Show author
+    LCD_ShowString(30, 110, 200, 16, 16, lcd_id);          // Show LCD ID
+    LCD_ShowString(30, 130, 200, 12, 12, "2019/11/15");    // Show date
+    x++;                                                   // Change color index
+    if (x == 12)                                           // Reset color index
+      x = 0;
+    LED0 = !LED0;    // Toggle LED0
+    HAL_Delay(1000); // Delay 1s
+    /* USER CODE END WHILE */
 
-		/* USER CODE BEGIN 3 */
-	}
-	/* USER CODE END 3 */
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
 
 /**
